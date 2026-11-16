@@ -1,0 +1,12 @@
+{
+  "name": "trading-network",
+  "version": "0.0.1",
+  "description": "Commodity trading business network for Hyperledger Composer",
+  "license": "MIT",
+  "engines": {
+    "composer": "^0.20.0"
+  },
+  "scripts": {
+    "prepublish": "composer archive create -t dir -n ."
+  }
+}

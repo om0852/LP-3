@@ -1,0 +1,36 @@
+/**
+ * Commodity trading network - model file
+ */
+namespace org.example.trading
+
+participant Trader identified by tradeId {
+  o String tradeId
+  o String firstName
+  o String lastName
+}
+
+asset Commodity identified by tradingSymbol {
+  o String tradingSymbol
+  o String description
+  o String mainExchange
+  o Double quantity
+  --> Trader owner
+}
+
+transaction Trade {
+  --> Commodity commodity
+  --> Trader newOwner
+}
+
+transaction RemoveHighQuantityCommodities {
+}
+
+event TradeNotification {
+  --> Commodity commodity
+  --> Trader oldOwner
+  --> Trader newOwner
+}
+
+event RemoveNotification {
+  --> Commodity commodity
+}
